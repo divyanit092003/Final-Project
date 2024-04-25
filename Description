@@ -1,0 +1,14 @@
+Package: covidGeospatialAnalysis
+Type: Package
+Title: Geospatial Analysis of COVID-19 Data
+Version: 0.1.0
+Date: 2024-04-23
+Author: Divyani Tangudu
+Maintainer: Divyani Tangudu <divyanitangudu11@gmail.com>
+Description: This package provides functions for geospatial analysis of COVID-19 data, including plotting COVID-19 cases on a map, calculating average cases density, and identifying hotspots.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    sf,
+    ggplot2
