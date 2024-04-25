@@ -1,0 +1,14 @@
+# Function to plot a choropleth map showing COVID-19 cases by region
+plot_covid_cases_map <- function(data, region_shapefile, date_column, cases_column, region_id_column) {
+    library(sf)
+    library(ggplot2)
+    
+    regions <- st_read(region_shapefile)
+    merged_data <- merge(regions, data, by.x = region_id_column, by.y = region_id_column)
+    
+    ggplot() +
+      geom_sf(data = merged_data, aes(fill = !!as.name(cases_column))) +
+      scale_fill_gradient(name = "COVID-19 Cases", low = "blue", high = "red") +
+      labs(title = "COVID-19 Cases by Region") +
+      theme_minimal()
+}
