@@ -11,3 +11,10 @@ plot_covid_cases_map <- function(region_data, cases_data) {
       labs(title = "COVID-19 Cases by Region") +
       theme_minimal()
 }
+
+
+## Define an S3 class representing COVID-19 data
+covid_data <- function(data, region_shapefile) {
+  structure(list(data = data, region_shapefile = region_shapefile), class = "covid_data")
+}
+
