@@ -1,0 +1,52 @@
+---
+title: "Geospatial Analysis Package"
+author: "Divyani Tangudu"
+date: "2024-04-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+# Usage example of read_shapefile()
+library(geospatial)
+shapefile_data <- read_shapefile("path/to/shapefile")
+print(shapefile_data)
+#This function reads a shapefile (.shp) and its associated files (.shx, .dbf, etc.) and returns a spatial object.
+
+#This function calculates the distance between two points on the Earth's surface using the Haversine formula.
+# Usage example of calculate_distance()
+distance <- calculate_distance(40.7128, -74.0060, 34.0522, -118.2437)
+print(distance)
+#in km
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+# Usage example of plot_map()
+library(geospatial)
+shapefile_data <- read_shapefile("path/to/shapefile")
+plot_map(spatial_data = shapefile_data, map_title = "My Map")
+#i will need to use 'maptools' for manipulation
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+#future improvements:
+support for interactive maps.
+conclusion
+This package provides essential tools for working with spatial data in R, allowing for easier visualization to the human eye.
