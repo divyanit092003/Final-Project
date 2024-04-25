@@ -1,0 +1,4 @@
+# Function to identify COVID-19 hotspots based on a given threshold of cases density
+identify_hotspots <- function(cases_density_data, threshold) {
+    hotspots <- cases_density_data[cases_density_data$cases_density > threshold, ]
+    return(hotspots)
