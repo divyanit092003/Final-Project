@@ -1,0 +1,13 @@
+calculate_average_cases_density
+
+# Function to calculate the average density of COVID-19 cases per unit area for each region
+calculate_average_cases_density <- function(data, region_shapefile, cases_column, region_id_column) {
+    library(sf)
+    
+    regions <- st_read(region_shapefile)
+    merged_data <- merge(regions, data, by.x = region_id_column, by.y = region_id_column)
+    merged_data$Area <- st_area(merged_data$geometry)
+    merged_data$Cases_Density <- merged_data[[cases_column]] / merged_data$Area
+    
+    return(merged_data[, c(region_id_column, 'Cases_Density')])
+}
