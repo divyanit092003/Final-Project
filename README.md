@@ -1,4 +1,4 @@
-# Final-Project
+# Geospatial Analysis package
 This is my Covid-19 Geospatial package for the final project
 title: "covidGeospatialAnalysis"
 author: "Divyani Tangudu"
